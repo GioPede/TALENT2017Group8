@@ -1,60 +1,35 @@
 #include <cstdio>
 #include <cstdlib>
-#include "modelSpace.h"
+#include <vector>
+#include <ctime>
+#include "system.h"
+#include "input.h"
 
-struct nuclide{
-    int A;
-    int Z;
-    int N;
-    float rms;
-};
+#define UNBROKEN_PAIRS
 
-void skipLines(FILE* input, int n){
-    for(int i = 0; i < n; i++)
-        fscanf(input, "%*[^\n]\n");
-}
-
-void readNuclides(FILE* input, nuclide nuclides[], int N){
-    for(int i = 0; i < N; i++){
-        fscanf(input, "%i %i %i %f %*[^\n]\n", &nuclides[i].Z,  &nuclides[i].N, &nuclides[i].A, &nuclides[i].rms);
-    }
-}
+using namespace std;
 
 int main(){
-    // initialize the file reader
-    FILE* input;
-    input = fopen("rms13.dat", "r+");
-    skipLines(input, 2);
+    // Initialize clock for timing
+    std::clock_t start;
+    start = std::clock();
 
-    // initialize output
-    FILE* output;
-    output = fopen("output.dat", "w+");
+    // Read and parse main input file
+    Input* input = new Input("../input/O26.input");
 
-    // set up
-    int N = 2469;
-    nuclide nuclides[N];
-    readNuclides(input, nuclides, N);
+    // Create the System class with given input
+    // Initialize the hamiltonian matrix
+    System* system = new System(input);
 
-    // set extremal values
-    int minZ = 80;
-    int maxZ = 81; //nuclides[N-1].Z;
+    // Run the diagonalization
+    system->diagonalize();
 
-    // loop over all Z values
-    for(int z = minZ; z < maxZ; z++){
-        for(int i = 0; i < N; i++){
-            if(nuclides[i].Z == z){
-                i++;
-                fprintf(output, "#%i\n", z);
-                while(nuclides[i].Z == z){
-                    if(nuclides[i-1].N == nuclides[i].N - 1)
-                        fprintf(output, "%i %f\n", nuclides[i].N, nuclides[i].rms - nuclides[i-1].rms );
-                    i++;
-                }
-                fprintf(output, "\n\n\n\n");
-                break;
-            }
-        }
-    }
+    // Compute degeneracy, angular momentum and print results
+    system->extractStates();
+    system->printOutput();
+
+    // Print info about run-time
+    printf("\n\nTotal time elapsed: %f\n\n", (std::clock() - start ) / (double) CLOCKS_PER_SEC);
 
     return 0;
 }

@@ -13,9 +13,9 @@ TREE   := $(sort $(patsubst %/,%,$(dir -d $(OBJS))))
 CXX           = mpic++
 CXXFLAGS      = -std=c++11 -O3
 INCPATH       = -I.
-LINK          = mpic++
+LINK          = mpic++ 
 LFLAGS        = -m64 -Wl,-O3
-LIBS          = $(SUBLIBS)
+LIBS          = $(SUBLIBS) -larmadillo -llapack -lblas
 CPPFLAGS      = -MMD -MP -MF $(@:$(OBJDIR)/%.o=$(DEPDIR)/%.d)
 
 # OUTPUT FILE NAME
