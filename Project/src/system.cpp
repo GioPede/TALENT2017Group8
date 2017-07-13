@@ -7,6 +7,9 @@
 #include "utils.h"
 
 System::System(Input* input){
+    // assign the system name
+    m_systemName = input->getSystemName();
+
     // create the model space container
     m_modelSpace = new ModelSpace();
 
@@ -106,6 +109,28 @@ void System::printOutput(){
         printf("%i\t%f\t%f\t %s \n", i, m_states[i].E, m_states[i].E - m_states[0].E, Jpi(m_states[i].J,m_states[i].pi));
     }
 }
+
+void System::saveOutputToFile(){
+    // open the output file
+    char outputFileName[256];
+    sprintf(outputFileName, "../output/%s.output", m_systemName);
+    FILE* outputFile;
+    outputFile = fopen(outputFileName, "w+");
+
+    // some nicely formatted output
+    // basic info
+    fprintf(outputFile, "\n--------------------------------------------------------------------------------\n");
+    fprintf(outputFile, "A = %i     Z = %i\n", m_nuclideA, m_nuclideZ);
+    fprintf(outputFile, "Ground State = %f\n\n", m_states[0].E);
+    fprintf(outputFile, "\n--------------------------------------------------------------------------------\n");
+
+    // list of levels and properties
+    fprintf(outputFile, "  N\tEnergy (MeV)\t Ex (MeV)\tJ pi\n");
+    for(int i = 0; i < m_states.size(); i++){
+        fprintf(outputFile, "%i\t%f\t%f\t %s \n", i, m_states[i].E, m_states[i].E - m_states[0].E, Jpi(m_states[i].J,m_states[i].pi));
+    }
+}
+
 
 
 std::vector<MatrixElement> System::readMatrixElements(const char* inputFileName){

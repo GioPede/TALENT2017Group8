@@ -15,7 +15,7 @@ int main(){
     start = std::clock();
 
     // Read and parse main input file
-    Input* input = new Input("../input/O26.input");
+    Input* input = new Input("../input/pair.input");
 
     // Create the System class with given input
     // Initialize the hamiltonian matrix
@@ -27,6 +27,7 @@ int main(){
     // Compute degeneracy, angular momentum and print results
     system->extractStates();
     system->printOutput();
+    system->saveOutputToFile();
 
     // Print info about run-time
     printf("\n\nTotal time elapsed: %f\n\n", (std::clock() - start ) / (double) CLOCKS_PER_SEC);

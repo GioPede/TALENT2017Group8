@@ -12,6 +12,7 @@ class System{
         void diagonalize();
         void extractStates();
         void printOutput();
+        void saveOutputToFile();
 
 private:
         int m_nuclideA;
@@ -19,6 +20,8 @@ private:
         int m_N;
         int m_Z;
         int m_hamiltonianSize;
+
+        const char* m_systemName;
 
         class ModelSpace* m_modelSpace;
         std::vector<std::vector<double>> m_hamiltonian;
