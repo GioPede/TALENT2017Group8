@@ -15,7 +15,7 @@ int main(){
     start = std::clock();
 
     // Read and parse main input file
-    Input* input = new Input("O22.input");
+    Input* input = new Input("../input/O26.input");
 
     // Create the System class with given input
     // Initialize the hamiltonian matrix
