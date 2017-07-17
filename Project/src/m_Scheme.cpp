@@ -5,6 +5,9 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <algorithm>
+
+#include "lanczos.h"
 
 using namespace std;
 
@@ -132,13 +135,47 @@ void construct_mscheme(int number_of_orbitals, vector<vector<int>> particles_in_
             M_buffer[number_of_orbitals] = M_buffer[number_of_orbitals] + M_buffer[k];
         }
         M_values.push_back(M_buffer);
-        //printf("----------------------\n");
-        //printf("Configuration: %i %i %i \n", configuration_array[i][0], configuration_array[i][1], configuration_array[i][2]);
-        //printf("Part. in orb.: %i %i %i \n", particles_in_orbital[i][0], particles_in_orbital[i][1], particles_in_orbital[i][2]);
-        //printf("2M of orbital: %i %i %i\n", M_values[i][0], M_values[i][1], M_values[i][2]);
-        //printf("2M total:      %i\n", M_values[i][3]);
-        //printf("\n");
+        printf("----------------------\n");
+        printf("Configuration: %i %i \n", configuration_array[i][0], configuration_array[i][1]);
+        printf("Part. in orb.: %i \n", particles_in_orbital[i][0]);
+        printf("2M of orbital: %i \n", M_values[i][0]);
+        printf("2M total:      %i\n", M_values[i][number_of_orbitals]);
+        printf("\n");
     }
+}
+
+//-------------------------------------------------------//
+//-------------------------------------------------------//
+
+void calc_J(int number_of_orbitals, vector<vector<int>> M_values, vector<vector<double>>& J_values) {
+    double counter = 0;
+    
+    vector<double> J_buffer(M_values.size(), 0);
+    for (int i = 0; i < M_values.size(); i++) {                 //M_values contains values of 2M, need to divide by 2
+        J_buffer[i] = M_values[i][number_of_orbitals]/2.;       //Write total M of each configuration in separate vector, divide by 2 to get M
+        if (J_buffer[i] > counter) {                            //Find largest M value and set it to int counter
+            counter = J_buffer[i];
+        }
+        //printf("%.1f\n", J_buffer[i]);
+    }
+    printf("\nMaximum M: %.1f\n", counter);
+    
+    vector<double> J_buffer2(M_values.size()/2, 0);
+    vector<double> J_buffer3(M_values.size()/2, 0);
+    for (int i = 0; i < counter + 1; i++) {
+        J_buffer2[i] = counter - i;                                                     //Fill in possible J values
+        J_buffer3[i] = int(count(J_buffer.begin(), J_buffer.end(), counter - i));       //Determine how often an M value occurs
+    }
+    J_values.push_back(J_buffer2);
+    
+    vector<double> J_buffer4(M_values.size()/2, 0);
+    for (int i = 0; i < counter + 1; i++) {
+        J_buffer4[i] = J_buffer3[i] - J_buffer3[i - 1];         //Determine which J values exist, e.g. (31.3) in Alex' notes
+    }
+    J_values.push_back(J_buffer4);
+    
+    printf("%.1f\t%.1f\t%.1f\t%.1f\t%.1f\n", J_values[0][0], J_values[0][1], J_values[0][2], J_values[0][3], J_values[0][4]);
+    printf("%.0f\t%.0f\t%.0f\t%.0f\t%.0f\n", J_values[1][0], J_values[1][1], J_values[1][2], J_values[1][3], J_values[1][4]);
 }
 
 //-------------------------------------------------------//
@@ -184,6 +221,11 @@ int main() {
     //printf("%i", particles_in_orbital[1][0]);
     vector<vector<int>> M_values;
     construct_mscheme(number_of_orbitals, particles_in_orbital, M_values, configuration_array, orbitals);
+    
+    //Determine possible J values
+    
+    vector<vector<double>> J_values;
+    calc_J(number_of_orbitals, M_values, J_values);
 
     
     return 0;
