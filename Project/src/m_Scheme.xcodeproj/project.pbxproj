@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D510EA951F17B38E00EC439F /* m_Scheme.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D510EA941F17B38E00EC439F /* m_Scheme.cpp */; };
-		D51DDD4B1F1D023C0006CAE1 /* lanczos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D51DDD491F1D023C0006CAE1 /* lanczos.cpp */; };
+		D5BCB4901F1E4F2800D75C57 /* lanczos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5BCB48F1F1E4F2800D75C57 /* lanczos.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D510EA941F17B38E00EC439F /* m_Scheme.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = m_Scheme.cpp; sourceTree = SOURCE_ROOT; };
-		D51DDD491F1D023C0006CAE1 /* lanczos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lanczos.cpp; sourceTree = SOURCE_ROOT; };
-		D51DDD4A1F1D023C0006CAE1 /* lanczos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lanczos.h; sourceTree = SOURCE_ROOT; };
+		D5BCB48F1F1E4F2800D75C57 /* lanczos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lanczos.cpp; sourceTree = SOURCE_ROOT; };
 		D5D386A41F0E8F6B00C847F2 /* m_Scheme */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = m_Scheme; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,9 +57,7 @@
 		D5D386A61F0E8F6B00C847F2 /* m_Scheme */ = {
 			isa = PBXGroup;
 			children = (
-				D510EA941F17B38E00EC439F /* m_Scheme.cpp */,
-				D51DDD491F1D023C0006CAE1 /* lanczos.cpp */,
-				D51DDD4A1F1D023C0006CAE1 /* lanczos.h */,
+				D5BCB48F1F1E4F2800D75C57 /* lanczos.cpp */,
 			);
 			path = m_Scheme;
 			sourceTree = "<group>";
@@ -123,8 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D51DDD4B1F1D023C0006CAE1 /* lanczos.cpp in Sources */,
-				D510EA951F17B38E00EC439F /* m_Scheme.cpp in Sources */,
+				D5BCB4901F1E4F2800D75C57 /* lanczos.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +202,9 @@
 		D5D386AC1F0E8F6B00C847F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib/;
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -215,6 +212,8 @@
 		D5D386AD1F0E8F6B00C847F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
