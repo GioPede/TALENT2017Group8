@@ -1,0 +1,7 @@
+o_220b               *.bei filename
+o_220b               *.beo filename
+o_220 f_220
+sd       usdb    
+   8.,   9.,  22.,   1.627, 0.0, 0.60     ! zi, zf, a, q, exf, 0.60 is the quenching factor
+0.0, 0.0, 0.0                          ! texp(s), percent non-GT, texp-err(s)
+END

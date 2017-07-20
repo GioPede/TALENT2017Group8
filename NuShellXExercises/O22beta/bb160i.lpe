@@ -1,0 +1,70 @@
+! ---------- shell input for bb160i.lpe
+sd                 input *.sp file name
+sdpn               proton-neutron *.sp file name
+usdb               interaction file name
+   6   8   8   1   5   10         3   number of pn orbitals, inc-core, izc-core, nvp-valence nvn-valence, neig, dim
+
+    3     number of levels,  nonconverged levels from extra.dat =   0
+  -31.6654   18   4   1    0.0000   1.0000   0.0000   1.0665   2.9343   0.9992
+  -27.9970   18   4   1    0.0000   1.0000   0.0000   1.9941   2.9669   0.0390
+  -24.4240   18   4   1    0.0000   1.0000   0.0000   1.9394   2.0988   0.9618
+
+! ---------- begin input for f_220.modelx
+M
+sdpn      
+  6
+  3
+0d3/2
+0d5/2
+1s1/2
+0d3/2
+0d5/2
+1s1/2
+y
+y
+   0 999   0 999   0 999
+y
+  1  0  4
+y
+  2  0  6
+y
+  3  0  2
+y
+  4  0  4
+y
+  5  0  6
+y
+  6  0  2
+n
+n
+X
+! ---------- end input for f_220.modelx
+
+! ---------- begin input for f_220.levelx
+L
+f_220
+s
+sdpn      
+   1
+   5
+y
+i 
+f_220
+n
+n
+n
+  0 20  2
+n
+  1  5  2
+n
+  1 13  2
+0
+0
+ 1
+  10
+n
+s
+y
+X
+! ---------- end input for f_220.levelx
+

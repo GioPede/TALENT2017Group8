@@ -1,0 +1,142 @@
+ maxdj =            5  to change put this in the file maxdj.dat
+ in nuopm the 2*maxdj =           10
+ nuopm max_sj2u, maxdmj =            5          10
+  Neutron TRM
+       16760           0    30000000
+  No of OPM matrix elements        16760 F T a+a-
+  CPU Time for NuOpm was    5.99999949E-02  seconds
+  Elapsed Time for NuOpm was    0.00000000      seconds
+
+ 1    0.00000000             999
+ a       16760 F T a+a-
+ a+a- F T
+  Neutron OPD 
+ 2    0.00000000             999
+  Nucleon types ab np
+ 3a   0.00000000             999
+ 3b   0.00000000             999
+ trmd,indexx =         5050       16760
+  Transition Density Op a+a-
+  Opmd =         5050
+ 4    0.00000000             999
+ 5   0.250000000             999
+ 6a  0.250000000             999
+ 6b  0.250000000             999
+  Opdd =         1280
+ 6c  0.250000000             999
+ 6d  0.250000000             999
+ 7   0.250000000             999
+ 8   0.250000000             999
+ 9   0.250000000             999
+  No of OPD matrix elements                 48782 F T
+  CPU Time for NuOpd was   0.228000000      seconds
+  Elapsed Time for NuOpd was    0.00000000      seconds
+ nuopm max_sj2u, maxdmj =            5           0
+           1           0    30000000
+  No of OPM matrix elements            1 F F    i
+  CPU Time for NuOpm was    1.20000094E-02  seconds
+  Elapsed Time for NuOpm was    0.00000000      seconds
+
+ 1    0.00000000             999
+ a           1 F F    i
+    i F F
+ 2    0.00000000             999
+  Nucleon types ab ??
+ 3a   0.00000000             999
+ 3b   0.00000000             999
+ trmd,indexx =            1           1
+  Identity Op    i
+  Opmd =            1
+ 4    0.00000000             999
+ 5    0.00000000             999
+ 6a   0.00000000             999
+ 6b   0.00000000             999
+  Opdd =            1
+ 6c   0.00000000             999
+ 6d   0.00000000             999
+ 7    0.00000000             999
+ 8    0.00000000             999
+ 9    0.00000000             999
+  No of OPD matrix elements                     1 F F
+  CPU Time for NuOpd was    4.00000019E-03  seconds
+  Elapsed Time for NuOpd was    0.00000000      seconds
+ we are here B
+ aaaa          10          -1           0           0
+  VERSION 4.0 
+  Operator combination a+a-    i
+ a           0          20           2           0           0
+  No of matrices BAS L            1
+  No of basis states L            0
+  No of matrices BAS R            1
+  No of basis states R            0
+ nuopm max_sj2u, maxdmj =            5           0
+  Neutron IDM
+         511           0    30000000
+  No of OPM matrix elements          511 F T    i
+  CPU Time for NuOpm was    1.19999945E-02  seconds
+  Elapsed Time for NuOpm was    0.00000000      seconds
+
+ 1    0.00000000             999
+ a         511 F T    i
+    i F T
+  Neutron OPD 
+ 2    0.00000000             999
+  Nucleon types ab np
+ 3a   0.00000000             999
+ 3b   0.00000000             999
+ trmd,indexx =           70         511
+  Identity Op    i
+  Opmd =           70
+ 4    0.00000000             999
+ 5    0.00000000             999
+ 6a   0.00000000             999
+ 6b   0.00000000             999
+  Opdd =            8
+ 6c   0.00000000             999
+ 6d   0.00000000             999
+ 7    0.00000000             999
+ 8    0.00000000             999
+ 9    0.00000000             999
+  No of OPD matrix elements                   436 F T
+  CPU Time for NuOpd was    4.00000019E-03  seconds
+  Elapsed Time for NuOpd was    0.00000000      seconds
+ maxdj =            5  to change put this in the file maxdj.dat
+ in nuopm the 2*maxdj =           10
+ nuopm max_sj2u, maxdmj =            5          10
+           0           0    30000000
+  No of OPM matrix elements            0 F F a+a-
+  CPU Time for NuOpm was    1.19999945E-02  seconds
+  Elapsed Time for NuOpm was    0.00000000      seconds
+
+ 1    0.00000000             999
+ a           0 F F a+a-
+ a+a- F F
+ 2    0.00000000             999
+  Nucleon types ab ??
+ 3a   0.00000000             999
+ 3b   0.00000000             999
+ trmd,indexx =            0           0
+  Transition Density Op a+a-
+  Opmd =            0
+ 4    0.00000000             999
+ 5    0.00000000             999
+ 6a   0.00000000             999
+ 6b   0.00000000             999
+  Opdd =            0
+ 6c   0.00000000             999
+ 6d   0.00000000             999
+ 7    0.00000000             999
+ 8    0.00000000             999
+ 9    0.00000000             999
+  No of OPD matrix elements                     0 F F
+  CPU Time for NuOpd was    0.00000000      seconds
+  Elapsed Time for NuOpd was    0.00000000      seconds
+ we are here B
+ aaaa          10          -1           0           0
+  VERSION 4.0 
+  Operator combination    i a+a-
+ a           0          20           2           0           0
+  No of matrices BAS L            1
+  No of basis states L            0
+  No of matrices BAS R            1
+  No of basis states R            0

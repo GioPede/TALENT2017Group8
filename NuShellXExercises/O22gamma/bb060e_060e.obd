@@ -1,0 +1,30 @@
+pn format, made from nushellx *.trz file
+! model-space name = sd       
+! interaction name = usdb     
+!
+!     ----------------------------------
+!     |  ai <-> af  =    22  <->   22  |
+!     |  zi <-> zf  =     8  <->    8  |
+!     | 2ji <-> 2jf =    14  <->   14  |
+!     |  pi <->  pf =     +  <->    +  |
+!     ----------------------------------
+!
+! one-body transition densities a(dj) = 
+! = <f|| [a+(k1)a(k2)]^(dj) ||i>/sqrt(2dj+1)
+! for input to some dwba codes: z = a(dj)/sqrt(2Ji+1)
+! with edmonds (de-shalit talmi) reduced matrix element convention
+!
+! for n,l,2j =    1  2  3  label  k =   5
+! for n,l,2j =    1  2  5  label  k =   4
+! for n,l,2j =    2  0  1  label  k =   6
+!
+!     0.000    0.000 coulomb energies for initial and final states
+! ji,   jf,   ti,   tf,  ti,  tz,
+! dj,   ni,   nf,       ef,       ei,      exi,      exf,
+!
+  7.0,  7.0,  3.0,  3.0,  3.0,  3.0,
+  1.0,   1.,   1.,   -14.664,   -14.664,     0.000,     0.000,
+   4,   4,   0.00000,   2.57143,  ! k1,k2,a(pp),a(nn)
+   5,   5,   0.00000,   2.13809,
+   6,   6,   0.00000,   1.69031,
+   0,

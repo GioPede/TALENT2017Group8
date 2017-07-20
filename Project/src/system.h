@@ -1,19 +1,15 @@
 #pragma once
 #include <vector>
 
-struct MatrixElement{
-    std::vector<int> index;
-    double val;
-};
-
 class System{
     public:
         System(class Input* input);
         void diagonalize();
-        void extractStates();
+        void extractStates(int M);
         void printOutput();
         void saveOutputToFile();
-
+        void runShell();
+        void correctOddJ();
 private:
         int m_nuclideA;
         int m_nuclideZ;
@@ -26,7 +22,7 @@ private:
         class ModelSpace* m_modelSpace;
         std::vector<std::vector<double>> m_hamiltonian;
         std::vector<double> m_spe;
-        std::vector<MatrixElement> m_matrixElements;
+        std::vector<struct MatrixElement> m_matrixElements;
 
 
         std::vector<std::vector<double>> m_eigenvectors;
@@ -34,7 +30,7 @@ private:
         std::vector<struct State> m_states;
 
         std::vector<std::vector<double>> buildHamiltionian();
-        std::vector<MatrixElement> readMatrixElements(const char *inputFileName);
+        std::vector<struct MatrixElement> readMatrixElements(const char *inputFileName);
         double computePotential(std::vector<int>& partA, std::vector<int>& partB);
         double computeSPEnergy(std::vector<int> part);
 };

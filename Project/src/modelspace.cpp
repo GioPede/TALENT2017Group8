@@ -29,9 +29,7 @@ void ModelSpace::setupModelSpace(const char* inputFileName){
 }
 
 // only gives neutron partitions at this point
-void ModelSpace::buildPartitions(int Z, int N){
-    // resize the partition table to the size of the system
-    m_nPartitions = binomial(m_nSpStates, N);
+void ModelSpace::buildPartitions(int Z, int N, int M){
 
     // create sps list
     std::vector<int> spStates(m_nSpStates);                  //Initialize array to work on and fill it with possible positions from model space
@@ -40,11 +38,14 @@ void ModelSpace::buildPartitions(int Z, int N){
 
     // create the buffer and start creating lists recursively
     std::vector<int> bufferArray(N);
-    findSublists(spStates, bufferArray, partitionTable, N, m_nSpStates, 0, 0);
+    partitionTable.resize(0);
+    findSublists(spStates, bufferArray, partitionTable, N, m_nSpStates, 0, 0, M);
 
-    printf("Number of Orbitals: %i\n", energyLevels.size());
-    printf("Number of Single Particle States: %i\n", m_nSpStates);
-    printf("Number of Partitions: %i\n", partitionTable.size());
+    if(M == 0){
+        printf("Number of Orbitals: %i\n", energyLevels.size());
+        printf("Number of Single Particle States: %i\n", m_nSpStates);
+    }
+    m_nPartitions = partitionTable.size();
 
 }
 
@@ -65,11 +66,14 @@ int ModelSpace::orbital(int spState){
     }
 }
 
-// recursively build all possible slater determinants in an odometric order
-void ModelSpace::findSublists(std::vector<int> spStates, std::vector<int> bufferArray, std::vector<std::vector<int>>& configurationArray, int N, int nSpStates, int index, int chosen) {
+void ModelSpace::findSublists(std::vector<int> spStates, std::vector<int> bufferArray, std::vector<std::vector<int>>& configurationArray, int N, int nSpStates, int index, int chosen, int M) {
+    // recursively build all possible slater determinants in an odometric order
     if (chosen == N) {
+        if(N % 2 == 0 && computeM(bufferArray) == 0.0 + M)
+            configurationArray.push_back(bufferArray);        //Append current occupation to configuration_array
+        else if(N % 2 == 1 && computeM(bufferArray) == 0.5 + M)
+            configurationArray.push_back(bufferArray);        //Append current occupation to configuration_array
 
-        configurationArray.push_back(bufferArray);        //Append current occupation to configuration_array
         return;
     }
     if (index >= nSpStates) {                          //If end of array is reached, i.e. no more elements to append
@@ -78,9 +82,9 @@ void ModelSpace::findSublists(std::vector<int> spStates, std::vector<int> buffer
 
     bufferArray[chosen] = spStates[index];
     // call after having chosen the current indexed particle
-    findSublists(spStates, bufferArray, configurationArray, N, nSpStates, index + 1, chosen + 1);
+    findSublists(spStates, bufferArray, configurationArray, N, nSpStates, index + 1, chosen + 1, M);
     // call after having discarded the current particle
-    findSublists(spStates, bufferArray, configurationArray, N, nSpStates, index + 1, chosen);
+    findSublists(spStates, bufferArray, configurationArray, N, nSpStates, index + 1, chosen, M);
 }
 
 bool ModelSpace::brokenPairs(int partition){
@@ -99,4 +103,22 @@ bool ModelSpace::brokenPairs(int partition){
     }
     // return false if no pari is broken
     return 0;
+}
+
+double ModelSpace::computeM(std::vector<int> partition){
+    double M = 0;
+    for (int i = 0; i < partition.size(); i++) {
+        int SPScounter = 0;
+
+        for (int k = 0; k < energyLevels.size(); k++) {
+            for (int j = 0; j < energyLevels[k].two_j + 1; j++) {
+                int pos = SPScounter + j;
+                if(partition[i] == pos + 1)
+                    M += ( energyLevels[k].two_j / 2.0 ) - (pos - SPScounter);
+
+            }
+            SPScounter +=  energyLevels[k].two_j + 1;
+        }
+    }
+    return M;
 }

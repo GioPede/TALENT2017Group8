@@ -1,0 +1,211 @@
+nr 0.,10.,0.,    6.00
+fi 1.,4.,1.,6.
+0.,  5.00,  5.00,  5.00
+   -1.00,    6.00,0.5,1.,E (MeV)
+ds linef
+dl 1.5,  -0.800,experiment
+dl 0.5,  -0.400,$( 22)F 
+dl   1.50,  -0.400,(Z= 9)
+dl   3.00,  -0.400,(N=13)
+co black
+ds line
+di 
+     0.500     0.000
+     0.500     0.000
+ds fir
+di 
+     0.500     0.000
+co black
+ds line
+di 
+     0.500     0.072
+     0.500     0.072
+ds fir
+di 
+     0.500     0.072
+co black
+ds line
+di 
+     0.500     0.310
+     0.500     0.310
+ds fir
+di 
+     0.500     0.310
+co black
+ds line
+di 
+     0.500     0.709
+     0.500     0.709
+ds fir
+di 
+     0.500     0.709
+co black
+ds line
+di 
+     0.500     1.413
+     0.500     1.413
+ds fir
+di 
+     0.500     1.413
+co red
+ds line
+di 
+     0.500     1.627
+     0.900     1.627
+ds fir
+di 
+     0.900     1.627
+dl    1.000,   1.527, 1+
+co black
+ds line
+di 
+     0.500     1.632
+     0.500     1.632
+ds fir
+di 
+     0.500     1.632
+co black
+ds line
+di 
+     0.500     2.007
+     0.500     2.007
+ds fir
+di 
+     0.500     2.007
+co red
+ds line
+di 
+     0.500     2.572
+     0.900     2.572
+ds fir
+di 
+     0.900     2.572
+co black
+ds line
+di 
+     0.500     2.580
+     0.500     2.580
+ds fir
+di 
+     0.500     2.580
+co black
+ds line
+di 
+     0.500     2.832
+     0.500     2.832
+ds fir
+di 
+     0.500     2.832
+co black
+ds line
+di 
+     0.500     2.881
+     0.500     2.881
+ds fir
+di 
+     0.500     2.881
+co black
+ds line
+di 
+     0.500     2.920
+     0.500     2.920
+ds fir
+di 
+     0.500     2.920
+co black
+ds line
+di 
+     0.500     3.170
+     0.500     3.170
+ds fir
+di 
+     0.500     3.170
+co black
+ds line
+di 
+     0.500     3.376
+     0.500     3.376
+ds fir
+di 
+     0.500     3.376
+co black
+ds line
+di 
+     0.500     3.582
+     0.500     3.582
+ds fir
+di 
+     0.500     3.582
+co black
+ds line
+di 
+     0.500     3.980
+     0.500     3.980
+ds fir
+di 
+     0.500     3.980
+co black
+ds line
+di 
+     0.500     4.200
+     0.500     4.200
+ds fir
+di 
+     0.500     4.200
+co black
+ds line
+di 
+     0.500     4.366
+     0.500     4.366
+ds fir
+di 
+     0.500     4.366
+co black
+ds line
+di 
+     0.500     4.630
+     0.500     4.630
+ds fir
+di 
+     0.500     4.630
+co black
+ds line
+di 
+     0.500     4.780
+     0.500     4.780
+ds fir
+di 
+     0.500     4.780
+co black
+ds line
+di 
+     0.500     4.883
+     0.500     4.883
+ds fir
+di 
+     0.500     4.883
+co black
+ds line
+di 
+     0.500     5.238
+     0.500     5.238
+ds fir
+di 
+     0.500     5.238
+co black
+ds line
+di 
+     0.500     5.590
+     0.500     5.590
+ds fir
+di 
+     0.500     5.590
+co black
+ds line
+di 
+     0.500     5.750
+     0.500     5.750
+ds fir
+di 
+     0.500     5.750
+co black

@@ -1,0 +1,78 @@
+ nuopm max_sj2u, maxdmj =            5           5
+  Neutron APM
+         380           0    30000000
+  No of OPM matrix elements          380 F T   a+
+  CPU Time for NuOpm was    4.00000066E-03  seconds
+  Elapsed Time for NuOpm was    0.00000000      seconds
+
+ 1    0.00000000             999
+ a         380 F T   a+
+   a+ F T
+  Neutron OPD 
+ 2    0.00000000             999
+  Nucleon types ab np
+ 3a   0.00000000             999
+ 3b   0.00000000             999
+ trmd,indexx =           48         380
+  One Particle Op   a+
+  Opmd =           48
+ 4    0.00000000             999
+ 5    0.00000000             999
+ 6a   0.00000000             999
+ 6b   0.00000000             999
+  Opdd =            6
+ 6c   0.00000000             999
+ 6d   0.00000000             999
+ 7    0.00000000             999
+ 8    0.00000000             999
+ 9    0.00000000             999
+  No of OPD matrix elements                   148 F T
+  CPU Time for NuOpd was    4.00000019E-03  seconds
+  Elapsed Time for NuOpd was    0.00000000      seconds
+ nuopm max_sj2u, maxdmj =            5           5
+  Proton AMM
+           3           0    30000000
+  No of OPM matrix elements            3 T F   a-
+  CPU Time for NuOpm was    4.00000066E-03  seconds
+  Elapsed Time for NuOpm was    0.00000000      seconds
+
+ 1    0.00000000             999
+ a           3 T F   a-
+   a- T F
+  Proton OPD 
+ 2    0.00000000             999
+  Nucleon types ab np
+ 3a   0.00000000             999
+ 3b   0.00000000             999
+ trmd,indexx =            3           3
+  One Particle Op   a-
+  Opmd =            3
+ 4    0.00000000             999
+ 5    0.00000000             999
+ 6a   0.00000000             999
+ 6b   0.00000000             999
+  Opdd =            3
+ 6c   0.00000000             999
+ 6d   0.00000000             999
+ 7    0.00000000             999
+ 8    0.00000000             999
+ 9    0.00000000             999
+  No of OPD matrix elements                     3 T F
+  CPU Time for NuOpd was    0.00000000      seconds
+  Elapsed Time for NuOpd was    0.00000000      seconds
+ we are here B
+ aaaa          -1           1           0           0
+  VERSION 4.0 
+  Operator combination   a+   a-
+ a           0           0           2           0           0
+  No of matrices BAS L            1
+  No of basis states L           14
+  No of matrices BAS R            8
+  No of basis states R          183
+ no_levelL          10          -1           1
+ no_levelL          10          -1           1
+ no_levelR          10          -1           1
+ no_levelR          10          10           1
+  CPU Time for NuTra was    4.00000019E-03  seconds
+  Elapsed Time for NuTra was    0.00000000      seconds
+

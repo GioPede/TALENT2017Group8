@@ -1,0 +1,17 @@
+fi
+0.,14.,.5,2.,r (rm)
+0.,.20,.01,.05,density (fm$(-3))
+dl 6.0,.175,$( 22)O       ho             
+ds linef
+co blue
+df dn008-022.plt
+dl 6.5,.15,Rn = 2.996  14 neutrons 
+co red
+df dp008-022.plt
+dl 6.5,.14,Rp = 2.693   8 protons 
+co black
+df dm008-022.plt
+dl 6.5,.16,Rm = 2.890  22 nucleons
+dl 6.5,.13,Rc = 2.740 charge
+dl 6.5,.12,Rn - Rp =  0.303 skin
+dl 6.7,.11,R = rms (fm)

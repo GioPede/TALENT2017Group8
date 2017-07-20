@@ -1,0 +1,3 @@
+4 0 					# A and Z of nuclide 20O
+../input/pair.sp		# name of modelspace file
+../input/g01.int	    # name of the interaction file

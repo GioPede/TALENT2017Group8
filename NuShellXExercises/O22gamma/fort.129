@@ -1,0 +1,14 @@
+
+md bb060k_060k
+cd bb060k_060k
+copy ..\fasttra.dat
+copy ..\*.sp
+copy ..\*.lpe
+copy ..\transt.*
+copy ..\*.nus
+copy ..\*.me
+copy ..\*.txi
+copy ..\*.inf
+NuShellX < transt.o_22000kk > transto_22000kk.tcpu
+source shellxt2.bat > trans.cpu
+nucp bb060k_060k.txi o_220x_60_60.din o_220y_60_60.din bb060k_060k.trz > nucp1.txt

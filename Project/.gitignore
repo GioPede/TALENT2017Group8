@@ -1,3 +1,5 @@
 build/
 test/
 *.user
+src_pn_fail/
+src_backup/

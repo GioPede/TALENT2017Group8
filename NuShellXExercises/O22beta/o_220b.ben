@@ -1,0 +1,25 @@
+!                change the file name needed
+open
+gt ,o_220b.bei   
+cp
+ho
+text
+! model space = sd      
+text
+! interaction = usdb    
+!                put ! in the line below if you want more screen output
+cut
+!                change the value of the negative numbers below 
+!                to change the number of initial, final states
+!                change the a,zi and zf values if needed
+az
+ 22,  8,  9
+gp
+gt
+e0,10
+  0.0,  0.0,  3.0,  2.0
+   -1,   -1,  1,  1,0,bb0600_1600
+gt
+m1,10
+  0.0,  1.0,  3.0,  2.0
+    0,    0,  1,  1,0,bb0600_1602

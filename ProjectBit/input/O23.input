@@ -1,0 +1,3 @@
+23 8		# A and Z of nuclide
+../input/sd.sp		# name of modelspace file
+../input/usdb.int	# name of the interaction file

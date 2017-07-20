@@ -1,0 +1,9 @@
+#!/bin/bash --login
+#PBS -m abe
+#PBS -N o22beta  
+. ~/                    
+export PATH="/usr/local/bin:$PATH"
+cd $PBS_O_WORKDIR
+export OMP_NUM_THREADS=32
+. o22beta.bat  
+qstat -f $PBS_JOBID
