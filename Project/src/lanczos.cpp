@@ -163,7 +163,7 @@ void diagonalize(vector<double> Alpha, vector<double> Beta) {
 //-------------------------------------------------------//
 //-------------------------------------------------------//
 
-int main() {
+int run_lanczos() {
     vector<double> Alpha;
     vector<double> Beta;
     
